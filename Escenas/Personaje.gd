@@ -1,4 +1,3 @@
-#Ethiannne aYUDAAAAAAAAAAA
 extends KinematicBody2D
 
 
