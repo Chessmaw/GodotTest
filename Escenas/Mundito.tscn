@@ -9,11 +9,12 @@ extents = Vector2( 4.5, 7 )
 [node name="Mundito" type="Node2D"]
 
 [node name="Personaje" type="KinematicBody2D" parent="."]
-position = Vector2( 15, 258 )
+position = Vector2( 446, 289 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+Velocidad = null
 
 [node name="Sprite" type="Sprite" parent="Personaje"]
 texture = ExtResource( 1 )
