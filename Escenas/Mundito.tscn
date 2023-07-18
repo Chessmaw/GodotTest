@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/Link/link caminando/Parado/0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Link/Caminando abajo/0.png" type="Texture" id=1]
 [ext_resource path="res://Escenas/Personaje.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,15 +9,16 @@ extents = Vector2( 4.5, 7 )
 [node name="Mundito" type="Node2D"]
 
 [node name="Personaje" type="KinematicBody2D" parent="."]
-position = Vector2( 446, 289 )
+position = Vector2( 138, 71 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-Velocidad = null
 
 [node name="Sprite" type="Sprite" parent="Personaje"]
 texture = ExtResource( 1 )
+hframes = 11
+frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
 position = Vector2( 0.5, 2 )
