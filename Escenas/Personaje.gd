@@ -1,25 +1,22 @@
 #Cuerpo del Personaje
 extends KinematicBody2D
 
+export (int) var speed = 200
 
-#Velocidad del Jugador
-export (float) var Velocidad = 200
-#Indentificacion del Personaje
-var VelocidadDelCuerpo = Vector2()
-#Funcion de entrada de Teclas
-func EntradadeTeclas():
-	var VelocidadDelCuerpo = Vector2()
-	
+var velocity = Vector2()
+
+func get_input():
+	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
-		VelocidadDelCuerpo.x += 1
+		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
-		VelocidadDelCuerpo.x -= 1
+		velocity.x -= 1
 	if Input.is_action_pressed("ui_down"):
-		VelocidadDelCuerpo.y += 1
+		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
-		VelocidadDelCuerpo.y -= 1
-	VelocidadDelCuerpo = VelocidadDelCuerpo.normalized() * Velocidad
-	
+		velocity.y -= 1
+	velocity = velocity.normalized() * speed
+
 func _physics_process(delta):
-	EntradadeTeclas()
-	VelocidadDelCuerpo = move_and_slide(VelocidadDelCuerpo)
+	get_input()
+	velocity = move_and_slide(velocity)
